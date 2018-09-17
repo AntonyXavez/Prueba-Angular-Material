@@ -1,0 +1,34 @@
+<div class="container">
+  <h1 mat-dialog-title class="title">{{data.title}}</h1>
+  <form class="form">
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Alias</mat-label>
+      <mat-select required [(value)]="account.alias">
+        <mat-option *ngFor="let a of alias" [value]="a">
+          {{a}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Moneda</mat-label>
+      <mat-select required [(value)]="account.currency">
+        <mat-option *ngFor="let currency of currencies" [value]="currency">
+          {{currency}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="form-field">
+      <mat-label>Tipo</mat-label>
+      <mat-select required [(value)]="account.type">
+        <mat-option *ngFor="let a of type" [value]="a">
+          {{a}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+
+  <div class="buttons">
+    <button mat-raised-button class="save" class="save" (click)="addAccount()">Agregar</button>
+    <button mat-raised-button color="warn" (click)="onNoClick()">Cancelar</button>
+  </div>
+</div>

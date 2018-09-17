@@ -1,0 +1,38 @@
+<app-login *ngIf="!sesion"></app-login>
+<mat-sidenav-container class="sidenav-container" *ngIf="sesion">
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="toolbar">
+      <a [routerLink]="['search-customer']" class="home">
+      <button mat-icon-button>
+        <mat-icon>home</mat-icon>
+      </button>
+      </a>
+      <span class="title">{{title}}</span>
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </mat-toolbar>
+    <br>
+    <br>
+    <router-outlet class="pages"></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item *ngIf="role == 0">
+    <a class="link" [routerLink]="['users']">
+      <mat-icon>how_to_reg</mat-icon>
+      <span>Usuarios</span>
+    </a>
+  </button>
+  <button mat-menu-item *ngIf="role == 0">
+    <a class="link" [routerLink]="['customer']">
+      <mat-icon>people</mat-icon>
+      <span>Clientes</span>
+    </a>
+  </button>
+  <button mat-menu-item (click)="logout()">
+    <mat-icon>cancel</mat-icon>
+    <span>Cerrar Sesion</span>
+  </button>
+</mat-menu>

@@ -1,0 +1,93 @@
+  .card{
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 85%;
+  }
+
+  .container{
+    display: flex;
+    justify-content: center;
+    align-content:  center;
+  }
+  
+  .form-field{
+    padding-top: 15px;
+    width: 100%;
+    margin: auto;
+  }
+  
+  .add{
+    background: green;
+    color: white; 
+    float: right;
+  }
+  
+  .buttons {
+    text-align: center
+  }
+  
+  .table{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 auto;
+    text-align: center;
+    width: 70%;
+  }
+  
+  .form{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+    width: 70%;
+    background: #ffffff;
+  }
+  
+  .link{
+    text-decoration: none;
+    color: white;
+  }
+  
+  .back{
+    margin-left: 180px;
+  }
+  
+
+    
+  .title{
+    margin: 0 auto;
+    font-size: 30px;
+    text-align: center;
+    align-items: center
+  }
+  
+  .save{
+    color: white;
+    background-color: green;
+    margin-right: 5px;
+  }
+
+  
+  .mat-table{
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    background: #ffffff;
+  }
+  
+  .titleTable{
+    text-align: center;
+  }
+
+  .accounts{
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+    width: 95%;
+    background: #ffffff;
+  }
+  

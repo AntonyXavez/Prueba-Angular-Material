@@ -1,0 +1,32 @@
+.example-container{
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+  }
+
+.form-field{
+    padding-top: 15px;
+    width: 90%;
+    margin: auto;
+}
+
+.access{
+    background: green;
+    color: white;
+    width: 50%;
+    
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 auto;
+    text-align: center;
+    width: 70%;
+    background: rgb(240, 240, 240);
+  }
+
+  

@@ -1,0 +1,97 @@
+<div class="container">
+  <mat-card class="card">
+    <div class="flex-container">
+      <button mat-raised-button class="add" *ngIf="!add" (click)="add = true">Agregar</button>
+      <br>
+      <table mat-table [dataSource]="dataSource" *ngIf="!add">
+        <ng-container matColumnDef="identification">
+          <th mat-header-cell *matHeaderCellDef class="titleTable">Identificación</th>
+          <td mat-cell *matCellDef="let element"> {{element.identification}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="name" >
+          <th mat-header-cell *matHeaderCellDef class="titleTable">Nombre</th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="birthday" class="titleTable">
+          <th mat-header-cell *matHeaderCellDef class="titleTable">Fecha de nacimiento</th>
+          <td mat-cell *matCellDef="let element"> {{element.birthdate | date: 'dd/MM/yyyy' }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="phone" class="titleTable">
+          <th mat-header-cell *matHeaderCellDef class="titleTable">Telefono</th>
+          <td mat-cell *matCellDef="let element"> {{element.phone }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="address" class="titleTable">
+          <th mat-header-cell *matHeaderCellDef class="titleTable">Dirección</th>
+          <td mat-cell *matCellDef="let element"> {{element.address }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="options" class="titleTable">
+          <th mat-header-cell *matHeaderCellDef class="titleTable">Opciones</th>
+          <td mat-cell *matCellDef="let element; let i : index">
+            <button mat-raised-button color="primary" (click)="navigate(i.id)">
+              Eliminar
+            </button>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+    <div *ngIf="add">
+      <br>
+      <h1 class="title"><strong>Agregar Cliente</strong></h1>
+      <br>
+      <mat-divider></mat-divider>
+      <div class="form">
+        <form #customerForm="ngForm" (ngSubmit)="addCustomer()">
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Identificación</mat-label>
+            <input matInput type="number" name="username" autocomplete="off" [(ngModel)]="customer.identification" name="identification"
+              #identification="ngModel" required>
+            <mat-error *ngIf="identification.errors?.required">
+              Campo <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Nombre</mat-label>
+            <input matInput [(ngModel)]="customer.name" name="name" #name="ngModel" required>
+            <mat-error>
+              Campo <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Fecha de Nacimiento</mat-label>
+            <input matInput [matDatepicker]="picker" disabled [(ngModel)]="customer.birthdate" name="birthdate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker [startAt]="startDate" disabled="false"></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Dirección</mat-label>
+            <input matInput [(ngModel)]="customer.address" name="address" #address="ngModel" required>
+            <mat-error>
+              Campo <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Telefono</mat-label>
+            <input matInput type="number" minlength="8" [(ngModel)]="customer.phone" name="phone" #phone="ngModel"
+              required>
+            <mat-error *ngIf="phone.errors?.required">
+              Campo <strong>Requerido</strong>
+            </mat-error>
+          </mat-form-field>
+        </form>
+      </div>
+      <div class="buttons">
+        <button mat-raised-button class="save" (click)="addCustomer()">Agregar</button>
+        <button mat-raised-button color="warn" (click)="addCancel()">Cancelar</button>
+      </div>
+    </div>
+  </mat-card>
+</div>

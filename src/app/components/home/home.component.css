@@ -1,0 +1,44 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  color: darkgreen;
+  width: 200px;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+}
+
+.title{
+  margin: 0 auto;
+}
+
+.toolbar {
+  color: white;
+  z-index: 9999;
+}
+
+.list-toolbar{
+  background: lightgreen;
+  height: 100%;
+  position: fixed;
+  width: 12%;
+}
+
+.pages{
+  margin-top: 30px;
+  
+}
+
+.link{
+  text-decoration: none;
+  color: black;
+}
+
+.home{
+  text-decoration: none;
+  color: white;
+}
