@@ -10,9 +10,9 @@ import { APP_ROUTING } from './app.router';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomerComponent } from './components/customer/customer.component';
-import { LoginService, UserService, AccountService, CustomerService } from './providers/services';
+import { LoginService, UserService, AccountService, CustomerService, SearchService } from './providers/services';
 import { UsersComponent } from './components/users/users.component';
-import { DialogsComponent } from './components/dialogs/dialogs.component';
+import { DialogsComponent, DialogActiveComponent } from './components/dialogs/dialogs.component';
 import { RoleTextPipe } from './pipes/role-text.pipe';
 import { SearchCustomerComponent } from './components/search-customer/search-customer.component';
 import { AddAccountComponent } from './components/add-account/add-account.component';
@@ -32,11 +32,13 @@ import { AccountsComponent } from './components/accounts/accounts.component';
     RoleTextPipe,
     SearchCustomerComponent,
     AddAccountComponent,
-    AccountsComponent
+    AccountsComponent,
+    DialogActiveComponent
   ],
   entryComponents:[
     AddAccountComponent,
-    DialogsComponent
+    DialogsComponent,
+    DialogActiveComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import { AccountsComponent } from './components/accounts/accounts.component';
     LoginService,
     UserService,
     AccountService,
-    CustomerService
+    CustomerService,
+    SearchService
   ],
   bootstrap: [AppComponent]
 })

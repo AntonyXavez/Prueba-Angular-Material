@@ -1,0 +1,19 @@
+.container{
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.title{
+    text-align: center;
+}
+
+.buttons{
+    justify-content: center;
+}
+
+.accept{
+    color: white;
+    background-color: green;
+}

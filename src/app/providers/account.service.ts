@@ -31,4 +31,16 @@ export class AccountService {
 
     return accountsCustomer;
   }
+
+  patchAccount(account: Account){
+    for (let i = 0; i < this.accounts.length; i++) {
+      const element = this.accounts[i];
+      if (element.id == account.id) {
+        this.accounts.splice(i,1);
+        break;
+      }
+    }
+    this.accounts.push(account);
+    localStorage.setItem('accounts', JSON.stringify(this.accounts));   
+  }
 }

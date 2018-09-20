@@ -1,32 +1,41 @@
-.example-container{
+.card{
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     align-content: center;
-    width: 100%;
+    width: 85%;
   }
 
-.form-field{
-    padding-top: 15px;
-    width: 90%;
-    margin: auto;
-}
+  .container{
+    display: flex;
+    justify-content: center;
+    align-content:  center;
+  }
 
-.access{
-    background: green;
-    color: white;
-    width: 50%;
-    
-}
-
-.form{
+  .form{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     margin: 0 auto;
     text-align: center;
-    width: 70%;
-    background: rgb(240, 240, 240);
+
+    background: #ffffff;
+  }
+
+  .title{
+    margin: 0 auto;
+    font-size: 30px;
+    text-align: center;
+    align-items: center
+  }
+
+  .form-field{
+    padding-top: 15px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .search{
+      float: right;
   }
 
   

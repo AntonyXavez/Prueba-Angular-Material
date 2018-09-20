@@ -21,7 +21,7 @@ export class DialogsComponent implements OnInit {
 }
 
 @Component({
-  selector: 'app-dialogs',
+  selector: 'app-active',
   templateUrl: './active.component.html',
   styleUrls: ['./dialogs.component.css']
 })
@@ -34,7 +34,7 @@ export class DialogActiveComponent implements OnInit {
   }
 
   onNoClick(): void {
-    this.dialogRef.close();
+    this.dialogRef.close(false);
   }
 
 }
