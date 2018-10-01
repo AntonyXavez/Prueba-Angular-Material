@@ -10,13 +10,15 @@ import { APP_ROUTING } from './app.router';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomerComponent } from './components/customer/customer.component';
-import { LoginService, UserService, AccountService, CustomerService, SearchService } from './providers/services';
+import { LoginService, UserService, AccountService, CustomerService, SearchService,
+         OperationService } from './providers/services';
 import { UsersComponent } from './components/users/users.component';
-import { DialogsComponent, DialogActiveComponent } from './components/dialogs/dialogs.component';
+import { DialogsComponent, DialogActiveComponent, CashComponent, CheckDialogComponent } from './components/dialogs/dialogs.component';
 import { RoleTextPipe } from './pipes/role-text.pipe';
 import { SearchCustomerComponent } from './components/search-customer/search-customer.component';
 import { AddAccountComponent } from './components/add-account/add-account.component';
 import { AccountsComponent } from './components/accounts/accounts.component';
+import { OperationsComponent } from './components/operations/operations.component';
 
 
 
@@ -33,12 +35,17 @@ import { AccountsComponent } from './components/accounts/accounts.component';
     SearchCustomerComponent,
     AddAccountComponent,
     AccountsComponent,
-    DialogActiveComponent
+    DialogActiveComponent,
+    OperationsComponent,
+    CashComponent,
+    CheckDialogComponent    
   ],
   entryComponents:[
     AddAccountComponent,
     DialogsComponent,
-    DialogActiveComponent
+    DialogActiveComponent,
+    CashComponent,
+    CheckDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +60,8 @@ import { AccountsComponent } from './components/accounts/accounts.component';
     UserService,
     AccountService,
     CustomerService,
-    SearchService
+    SearchService,
+    OperationService
   ],
   bootstrap: [AppComponent]
 })

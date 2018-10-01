@@ -17,3 +17,23 @@
     color: white;
     background-color: green;
 }
+
+.add-list{
+    color: white;
+    background-color: green;
+    width: 100%;
+}
+
+.form-field{
+    padding-top: 15px;
+    width: 100%;
+    margin: auto;
+  }
+
+.table{
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}

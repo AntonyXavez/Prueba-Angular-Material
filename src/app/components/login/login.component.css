@@ -16,7 +16,6 @@
     margin-bottom: 50px;
 }
 
-
 .loging{
     display: flex;
     flex-direction: column;
@@ -45,6 +44,4 @@
       background: green;
       color: white;
       width: 50%;
-      
   }
-  

@@ -1,0 +1,38 @@
+.card{
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 85%;
+  }
+
+  .container{
+    display: flex;
+    justify-content: center;
+    align-content:  center;
+    padding-bottom: 50px;
+  }
+
+  .form-field{
+    padding-top: 15px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .deposit{
+        padding-left: 5px;
+  }
+
+  .payment{
+      padding-left: 5px;
+  }
+
+  .add{
+    background: green;
+    color: white; 
+    margin-right: 5px;
+  }
+
+  .buttons{
+    text-align: center;
+}

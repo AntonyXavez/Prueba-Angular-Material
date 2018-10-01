@@ -1,0 +1,96 @@
+<div *ngIf="data.check == 'own'">
+    <h1 mat-dialog-title>{{data.title}}</h1>
+    <div mat-dialog-content>
+        <mat-form-field class="form-field">
+            <mat-label>No. Cheque</mat-label>
+            <input matInput type="number" [(ngModel)]="check.noCheck" name="noCheck">
+        </mat-form-field>
+        <mat-form-field class="form-field">
+            <mat-label>Valor</mat-label>
+            <input matInput type="number" [(ngModel)]="check.total" name="total">
+        </mat-form-field>
+        <button mat-raised-button matSuffix class="add-list" (click)="addCheck()">
+            Agregar
+            <i class="material-icons">
+                add
+            </i>
+        </button>
+        <br>
+
+        <table mat-table [dataSource]="dataSource" class="table">
+            <ng-container matColumnDef="number">
+                <th mat-header-cell *matHeaderCellDef class="titleTable">No Cheque</th>
+                <td mat-cell *matCellDef="let element"> {{element.noCheck}} </td>
+            </ng-container>
+            <ng-container matColumnDef="bank">
+                <th mat-header-cell *matHeaderCellDef class="titleTable">Banco</th>
+                <td mat-cell *matCellDef="let element"> {{element.bank}} </td>
+            </ng-container>
+            <ng-container matColumnDef="total" class="titleTable">
+                <th mat-header-cell *matHeaderCellDef class="titleTable">Total</th>
+                <td mat-cell *matCellDef="let element"> {{element.total}} </td>
+            </ng-container>
+            <ng-container matColumnDef="options" class="titleTable">
+                <th mat-header-cell *matHeaderCellDef class="titleTable">Opciones</th>
+                <td mat-cell *matCellDef="let element; let i : index">
+                    <button mat-raised-button color="warn" (click)="remove(i)" *ngIf="element.role != 0">Eliminar</button>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        
+
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button color="warn" (click)="onNoClick()">Cerrar</button>
+    </div>
+</div>
+<div *ngIf="data.check == 'other'">
+    <h1 mat-dialog-title>{{data.title}}</h1>
+    <div mat-dialog-content>
+        <mat-form-field class="form-field">
+            <mat-label>Banco</mat-label>
+            <mat-select required [(value)]="check.bank">
+                <mat-option>Ninguno</mat-option>
+                <mat-option *ngFor="let bank of banks" [value]="bank">
+                    {{bank}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field class="form-field">
+            <mat-label>No. Cheque</mat-label>
+            <input matInput type="number">
+        </mat-form-field>
+        <mat-form-field class="form-field">
+            <mat-label>Valor</mat-label>
+            <input matInput type="number">
+        </mat-form-field>
+
+        <table mat-table [dataSource]="dataSource" class="table">
+            <ng-container matColumnDef="number">
+                <th mat-header-cell *matHeaderCellDef class="titleTable">No Cheque</th>
+                <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+            </ng-container>
+            <ng-container matColumnDef="bank">
+                <th mat-header-cell *matHeaderCellDef class="titleTable">Banco</th>
+                <td mat-cell *matCellDef="let element"> {{element.password}} </td>
+            </ng-container>
+            <ng-container matColumnDef="total" class="titleTable">
+                <th mat-header-cell *matHeaderCellDef class="titleTable">Total</th>
+                <td mat-cell *matCellDef="let element"> {{element.role | role}} </td>
+            </ng-container>
+            <ng-container matColumnDef="options" class="titleTable">
+                <th mat-header-cell *matHeaderCellDef class="titleTable">Opciones</th>
+                <td mat-cell *matCellDef="let element; let i : index">
+                    <button mat-raised-button color="warn" (click)="remove(i)" *ngIf="element.role != 0">Eliminar</button>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-raised-button color="warn" (click)="onNoClick()">Cerrar</button>
+    </div>
+</div>

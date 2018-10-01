@@ -21,6 +21,61 @@
   </mat-card>
 
   <mat-card class="card" *ngIf="searching">
-    
+    <button mat-raised-button color="warn" (click)="clear()"><i class="material-icons">
+        arrow_back
+      </i> Regresar</button>
+    <div class="flex-container">
+      <br>
+      <mat-divider></mat-divider>
+      <br>
+      <h2>Nombre : {{customer.name}}</h2>
+      <h2>Fecha de Nacimiento : {{customer.birthdate | date: 'dd/MM/yyyy'}}</h2>
+      <br>
+      <mat-divider></mat-divider>
+      <table mat-table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="noCuenta">
+          <th mat-header-cell *matHeaderCellDef class="titleTable">No. Cuenta</th>
+          <td mat-cell *matCellDef="let element"> {{element.number}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="type">
+          <th mat-header-cell *matHeaderCellDef class="titleTable">Tipo</th>
+          <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="alias" class="titleTable">
+          <th mat-header-cell *matHeaderCellDef class="titleTable">Alias</th>
+          <td mat-cell *matCellDef="let element"> {{element.alias}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="currency" class="titleTable">
+          <th mat-header-cell *matHeaderCellDef class="titleTable">Moneda</th>
+          <td mat-cell *matCellDef="let element"> {{element.currency }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="balance" class="titleTable">
+          <th mat-header-cell *matHeaderCellDef class="titleTable">Saldo</th>
+          <td mat-cell *matCellDef="let element"> {{element.balance }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status" class="titleTable">
+          <th mat-header-cell *matHeaderCellDef class="titleTable">Estado</th>
+          <td mat-cell *matCellDef="let element"> {{element.status }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="options" class="titleTable">
+          <th mat-header-cell *matHeaderCellDef class="titleTable">Opciones</th>
+          <td mat-cell *matCellDef="let element; let i : index">
+            <a [routerLink]="[ ('/operations/account/'+i.id) ]">
+              <button mat-raised-button color="warn" (click)="saveAccount(i.id)">Operaciones</button>
+            </a>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
   </mat-card>
 </div>

@@ -38,4 +38,16 @@
       float: right;
   }
 
+  .mat-table{
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    background: #ffffff;
+  }
+
+  .titleTable{
+    text-align: center;
+  }
+
   

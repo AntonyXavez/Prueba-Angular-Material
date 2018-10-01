@@ -1,0 +1,30 @@
+<h1 mat-dialog-title>Efectivo</h1>
+<div mat-dialog-content>
+    <mat-form-field class="form-field">
+        <mat-label>Billetes de 100</mat-label>
+        <input matInput type="number" placeholder="Cantidad de billetes de 100" [(ngModel)]="detail.bills100" name="100">
+    </mat-form-field>
+    <mat-form-field class="form-field">
+        <mat-label>Billetes de 50</mat-label>
+        <input matInput type="number" placeholder="Cantidad de billetes de 50" [(ngModel)]="detail.bills50" name="50">
+    </mat-form-field>
+    <mat-form-field class="form-field">
+        <mat-label>Billetes de 20</mat-label>
+        <input matInput type="number" placeholder="Cantidad de billetes de 20" [(ngModel)]="detail.bills20" name="20">
+    </mat-form-field>
+    <mat-form-field class="form-field">
+        <mat-label>Billetes de 10</mat-label>
+        <input matInput type="number" placeholder="Cantidad de billetes de 10" [(ngModel)]="detail.bills10" name="10">
+    </mat-form-field>
+    <mat-form-field class="form-field">
+        <mat-label>Billetes de 5</mat-label>
+        <input matInput type="number" placeholder="Cantidad de billetes de 5" [(ngModel)]="detail.bills5" name="5">
+    </mat-form-field>
+    <mat-form-field class="form-field">
+        <mat-label>Monedas</mat-label>
+        <input matInput type="number" placeholder="Cantidad en monedas recibidas" [(ngModel)]="detail.coins" name="coins">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="warn" (click)="onNoClick()">Cerrar</button>
+</div>

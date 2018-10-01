@@ -1,0 +1,60 @@
+<div class="container">
+  <mat-card class="card">
+    <div class="info">
+      <h4>Cliente : {{customer.name}}</h4>
+      <h4>Cuenta No : {{account.number}}</h4>
+      <h4>Moneda : {{account.currency}}</h4>
+    </div>
+    <div class="deposit" *ngIf="operation != 'payment' && operation != '-1'">
+      <h2>Deposito</h2>
+      <mat-form-field class="form-field">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Nombre de quien deposita">
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <mat-label>Identificación</mat-label>
+        <input matInput type="number" placeholder="Identificación de quien deposita">
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <mat-label>Total a depositar</mat-label>
+        <input matInput type="number">
+      </mat-form-field>
+      <br>
+      <mat-divider></mat-divider>
+      <h4>Detalle del deposito</h4>
+      <mat-form-field class="form-field">
+        <mat-label>Total a depositar</mat-label>
+        <input matInput type="number" disabled>
+        <button mat-raised-button matSuffix (click)="cash()">
+          <mat-icon>add</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <mat-label>Cheque Propio</mat-label>
+        <input matInput type="number" disabled>
+        <button mat-raised-button matSuffix (click)="check('own')">
+          <mat-icon>add</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <mat-label>Cheque Otros Bancos</mat-label>
+        <input matInput type="number" disabled>
+        <button mat-raised-button matSuffix (click)="check('other')">
+          <mat-icon>add</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div class="payment" *ngIf="operation != 'deposit' && operation != '-1'">
+      <h1>Pago</h1>
+    </div>
+    <br>
+    <div class="buttons">
+      <button mat-raised-button matSuffix class="add">
+        Confirmar
+      </button>
+      <button mat-raised-button matSuffix color="warn">
+        Cancelar
+      </button>
+    </div>
+  </mat-card>
+</div>

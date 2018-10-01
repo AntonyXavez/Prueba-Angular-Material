@@ -2,7 +2,7 @@
 <mat-sidenav-container class="sidenav-container" *ngIf="sesion">
   <mat-sidenav-content>
     <mat-toolbar color="primary" class="toolbar">
-      <a [routerLink]="['search-customer']" class="home">
+      <a [routerLink]="['search-customer']" class="home" *ngIf="role == 0"> 
       <button mat-icon-button>
         <mat-icon>home</mat-icon>
       </button>
@@ -16,6 +16,8 @@
     <br>
     <router-outlet class="pages"></router-outlet>
   </mat-sidenav-content>
+
+  
 </mat-sidenav-container>
 
 <mat-menu #menu="matMenu">
